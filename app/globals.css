@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-color: #f4f4f4;
+}
+
+@font-face {
+  font-family: satoshibold;
+  src: url(/fonts/Satoshi-Bold.ttf);
+}
+@font-face {
+  font-family: satoshiblack;
+  src: url(/fonts/Satoshi-Black.ttf);
+}
+
+.workCardDiv {
+  box-shadow: 0 50px 49.5px -22px rgba(13, 13, 13, 0.1);
+  backdrop-filter: blur(8.199999809265137px);
+}
