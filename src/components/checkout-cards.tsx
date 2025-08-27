@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -14,12 +14,13 @@ import RealWord from "@assets/real-world-img.png";
 import { BsDot } from "react-icons/bs";
 import { IoIosArrowRoundDown } from "react-icons/io";
 import JelloWrapper from "./jelly-animation";  
+import { CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
 
 const FeaturesData = [
   {
     id: 1,
     header: "Project Management & Industrial Solutions",
-    // image: HostGuru,
+    summary: "Comprehensive packaging machinery, process optimization, and automation solutions for industrial environments.",
     txt1: [
       "Packaging machinery — business case development, vendor negotiations, evaluation, capacity utilization assessment, URS (User Requirement Specification), layout optimization, cost analysis.",
       "Process optimization — capacity utilization review, equipment selection and optimization, vendor negotiation, and efficiency evaluation.",
@@ -34,7 +35,7 @@ const FeaturesData = [
   {
     id: 2,
     header: "Compliance & Technical Auditing",
-    // image: Savor,
+    summary: "Expert auditing services ensuring workplace safety, environmental compliance, and regulatory adherence.",
     txt1: [
       "Instrumentation & sensors — calibration and deployment for process and environment monitoring.",
       "Air quality monitoring — dust monitoring and optimization programs for workplace safety and compliance.",
@@ -50,7 +51,7 @@ const FeaturesData = [
   {
     id: 3,
     header: "Process & Vendor Advisory",
-    // image: Qryptum,
+    summary: "Strategic consulting for process improvement, vendor selection, and operational efficiency enhancement.",
     txt1: [
       "End-to-end process improvement — reducing downtime, improving throughput, and enhancing energy efficiency.",
       "Vendor evaluation & selection based on performance, compliance, and cost",
@@ -94,6 +95,7 @@ const RoadmapCard = () => {
           <TiltCard
             header={feature.header}
             text1={feature.txt1}
+            summary={feature.summary}
             // image={feature.image}
             link={feature.link}
             buttonText={feature.buttonText}
@@ -106,73 +108,56 @@ const RoadmapCard = () => {
 
 const TiltCard = ({
   header,
+  summary,
   text1,
   link,
   buttonText,
 }: {
-  header: string;
+    header: string;
+  summary:string,
   text1: string[];
   link: any;
   buttonText: string;
 }) => {
-  const ref = useRef<HTMLDivElement | null>(null);
 
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const xSpring = useSpring(x);
-  const ySpring = useSpring(y);
-
-  const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!ref.current) return;
-
-    const rect = ref.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
-    const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
-
-    const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
-    const rY = mouseX / width - HALF_ROTATION_RANGE;
-
-    x.set(rX);
-    y.set(rY);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
   };
 
   return (
-    // hover:animate-jello-soft
-    // <JelloWrapper>
     <motion.div className="h-auto transition-all max-w-[408px] min-w-[508px] max-[500px]:min-w-full overflow-clip group bg-white/70 rounded-[23px] workCardDiv p-3">
       <h4 className="card-font font-semibold transition-all duration-300 text-[32px] mt-3 text-[#0088aa] mb-3">
         {header}
       </h4>
-      {text1.map((item, index) => (
-        <p key={index} className="text-[#999999] flex gap-x-2 text-[18px] space-y-3 transition-all duration-300 mb-3 card-font leading-relaxed">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DBB238" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-check h-5 w-5 text-accent mt-0.5 flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-          {item}
-        </p>
-      ))}
-      {/* <div className="lg:absolute lg:-bottom-[15%] lg:group-hover:bottom-10 bottom-10 transition-all duration-300 lg:left-1/2 lg:-translate-x-1/2">
-        <button
-          onClick={() => window.open(link, "_blank")}
-          className="bg-primary max-lg:mx-auto max-lg:mt-2 gap-2 px-4 whitespace-nowrap w-[145px] transition-all duration-300 flex items-center relative h-[48px] rounded-[40px] text-white font-medium group text-base overflow-clip"
-        >
-          {buttonText}
-          <div className="min-w-[30px] absolute right-3 lg:-right-[30%] lg:group-hover:right-3 transition-all duration-500 h-[30px] flex items-center justify-center rounded-full bg-white">
-            <IoIosArrowRoundDown className="text-primary text-2xl lg:group-hover:-rotate-90 lg:delay-200 -rotate-90 duration-500" />
-          </div>
-        </button>
-      </div> */}
+      <p className="text-gray-600 text-lg mb-4 leading-relaxed">
+        {summary}
+      </p>
+      <button
+        onClick={toggleExpanded}
+        className="flex items-center gap-2 text-[#0088aa] hover:text-[#006688] font-semibold mb-4 transition-colors duration-200 group"
+      >
+        <span>{isExpanded ? 'Show Less' : 'View Details'}</span>
+        {isExpanded ? (
+          <ChevronUp className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
+        ) : (
+          <ChevronDown className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
+        )}
+      </button>
+        <div className={`overflow-hidden transition-all duration-500 ${
+        isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+      }`}>
+                <div className="space-y-3 mb-6">
+          {text1.map((item, index) => (
+            <div key={index} className="flex gap-3 text-gray-700 leading-relaxed">
+              <CheckCircle className="w-5 h-5 text-[#DBB238] mt-0.5 flex-shrink-0" />
+              <p className="text-base">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </motion.div>
-    // </JelloWrapper>
   );
 };
 
