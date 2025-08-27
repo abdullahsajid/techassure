@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 
 const About = () => {
   const heading =
-    "I’m a results-driven Project Manager and Certified Auditor with a strong engineering background and extensive expertise in packaging solutions, industrial automation, warehouse optimization, and operational compliance. I help organizations plan, execute, and optimize technical projects while ensuring compliance with global standards. My approach blends technical know-how with strategic oversight to deliver cost savings, operational efficiency, and compliance excellence.";
+    "At TechAssure, our vision is to be the trusted leader in delivering innovative, reliable, and secure technology solutions. Backed by deep industry expertise, we simplify complexity and empower businesses to scale with confidence. We don’t just provide technology — we assure performance, reliability, and growth, making us your partner in building a smarter, future-ready world.";
 
   return (
     <div id="about" className=" py-20">

@@ -21,12 +21,12 @@ const FeaturesData = [
     header: "Project Management & Industrial Solutions",
     // image: HostGuru,
     txt1: [
-      "- Packaging machinery — business case development, vendor negotiations, evaluation, capacity utilization assessment, URS (User Requirement Specification), layout optimization, cost analysis.",
-      "- Process optimization — capacity utilization review, equipment selection and optimization, vendor negotiation, and efficiency evaluation.",
-      "- Automation projects — conveyors, sorters, pick-and-place systems, control and monitoring systems for manufacturing and logistics.",
-      "- Warehouse space optimization — layout planning, material flow design, and storage solutions.",
-      "- Logistics automation — automated sorting, scanning, loading and unloading systems for faster turnaround.",
-      "- Utilities equipment management — compressors, boilers, chillers, HVAC, and other plant support systems.",
+      "Packaging machinery — business case development, vendor negotiations, evaluation, capacity utilization assessment, URS (User Requirement Specification), layout optimization, cost analysis.",
+      "Process optimization — capacity utilization review, equipment selection and optimization, vendor negotiation, and efficiency evaluation.",
+      "Automation projects — conveyors, sorters, pick-and-place systems, control and monitoring systems for manufacturing and logistics.",
+      "Warehouse space optimization — layout planning, material flow design, and storage solutions.",
+      "Logistics automation — automated sorting, scanning, loading and unloading systems for faster turnaround.",
+      "Utilities equipment management — compressors, boilers, chillers, HVAC, and other plant support systems.",
     ],
     link: "#",
     buttonText: "Visit Site",
@@ -36,12 +36,13 @@ const FeaturesData = [
     header: "Compliance & Technical Auditing",
     // image: Savor,
     txt1: [
-      "- Instrumentation & sensors — calibration and deployment for process and environment monitoring.",
-      "- Air quality monitoring — dust monitoring and optimization programs for workplace safety and compliance.",
-      "- Noise monitoring — compliance checks to meet UAE HSE standards.",
-      "- Health compliance audits — workplace hygiene, PPE standards, and environmental health compliance.",
-      "- Enzyme audits — enzyme handling, equipment compliance, and audits for HC (Home Care) setups, food, pharma, and industrial applications.",
-      "- Hygiene audits — factory and warehouse hygiene inspections to meet ISO, HACCP, and local regulations."
+      "Instrumentation & sensors — calibration and deployment for process and environment monitoring.",
+      "Air quality monitoring — dust monitoring and optimization programs for workplace safety and compliance.",
+      "Noise monitoring — Compliance check to meet local legislations and global HSE standards.",
+      "Health compliance audits — workplace hygiene, PPE standards, and environmental health compliance.",
+      "Enzyme audits — enzyme handling, equipment compliance, and audits for HC (Home Care) setups, food, pharma, and industrial applications.",
+      "Hygiene audits — factory and warehouse hygiene inspections to meet ISO, HACCP, and local regulations.",
+      "Safety compliance - project safety program, site safty framework development, machinery safety compliance and auditing"
     ],
     link: "#",
     buttonText: "Install App",
@@ -51,10 +52,10 @@ const FeaturesData = [
     header: "Process & Vendor Advisory",
     // image: Qryptum,
     txt1: [
-      "- End-to-end process improvement — reducing downtime, improving throughput, and enhancing energy efficiency.",
-      "- Vendor evaluation & selection based on performance, compliance, and cost",
-      "- SOP creation and compliance documentation for audits & tenders",
-      "- Efficiency improvement programs for manufacturing and supply chain"
+      "End-to-end process improvement — reducing downtime, improving throughput, and enhancing energy efficiency.",
+      "Vendor evaluation & selection based on performance, compliance, and cost",
+      "SOP creation and compliance documentation for audits & tenders",
+      "Efficiency improvement programs for manufacturing and supply chain"
     ],
     link: "#",
     buttonText: "Visit Site",
@@ -150,11 +151,12 @@ const TiltCard = ({
     // hover:animate-jello-soft
     // <JelloWrapper>
     <motion.div className="h-auto transition-all max-w-[408px] min-w-[508px] max-[500px]:min-w-full overflow-clip group bg-white/70 rounded-[23px] workCardDiv p-3">
-      <h4 className="font-SatoshiBold font-bold transition-all duration-300 text-[32px] mt-3 text-[#0088aa]">
+      <h4 className="card-font font-semibold transition-all duration-300 text-[32px] mt-3 text-[#0088aa] mb-3">
         {header}
       </h4>
       {text1.map((item, index) => (
-        <p key={index} className="text-[#999999] font-semibold text-lg space-y-3 transition-all duration-300 mb-3">
+        <p key={index} className="text-[#999999] flex gap-x-2 text-[18px] space-y-3 transition-all duration-300 mb-3 card-font leading-relaxed">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DBB238" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-check h-5 w-5 text-accent mt-0.5 flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
           {item}
         </p>
       ))}

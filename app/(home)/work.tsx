@@ -15,7 +15,7 @@ const Work = () => {
           viewport={{ once: true }}
           className="text-primary origin-left font-SatoshiBold font-bold text-xl leading-[21px] tracking-widest uppercase mb-4"
         >
-          Why Work With Me
+          Why Work With Us
         </motion.p>
       </div>
 

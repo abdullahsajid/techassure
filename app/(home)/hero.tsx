@@ -151,9 +151,7 @@ const Hero = () => {
 				transition={{ duration: 0.4, delay: 0.3 }}
 				className='absolute left-1/2 -translate-x-1/2 top-[50%] max-sm:top-[53%] w-[80%] -translate-y-1/2 z-[99] text-black flex justify-center items-center'>
 				<div className='md:text-[25px] text-[25px] max-sm:text-[12px] max-sm:text-center max-sm:px-3 font-SatoshiBlack uppercase text-white text-center font-bold'>
-					Project Manager & Certified Auditor specializing in industrial
-					solutions, packaging automation, and compliance excellence across MENA
-					region.
+					Project management, Engineering Design, site auditing, specialized industrial solutions, packaging automation, and compliance excellence across MENA Region
 				</div>
 			</motion.div>
 			<motion.div
