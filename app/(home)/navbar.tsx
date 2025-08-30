@@ -132,9 +132,11 @@ const Navbar = () => {
 			viewport={{ once: true }}
 			className='pt-4 z-50 relative'>
 			<div className='lg:container ps-5 flex items-center justify-between'>
-				<div className='bg-primary  gap-2 px-4 whitespace-nowrap transition-all duration-300 flex items-center relative h-[48px] rounded-[40px] text-white font-medium group text-base overflow-clip cursor-pointer'>
-					<TextGenerateEffect words={"Tech Assure"} className='text-white' />
+			<div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
+				<div className="p-2 bg-gray-800 text-white flex items-center justify-center font-bold rounded-lg">
+					<TextGenerateEffect words={"TA"} className='text-white' />
 				</div>
+			</div>
 
 				<div className='relative max-w-[404px] shadow-glowing w-full h-[48px] rounded-[24px] bg-[#fff] flex items-center justify-center px-2 max-lg:hidden'>
 					{/* Single animated background pill */}

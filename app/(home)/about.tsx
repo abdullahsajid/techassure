@@ -18,7 +18,7 @@ const About = () => {
           viewport={{ once: true }}
           className="text-primary origin-center font-SatoshiBold text-3xl leading-[21px] tracking-widest uppercase text-center mb-7"
         >
-          About me
+          About us
         </motion.p>
         <div className="border-2 rounded-lg p-2">
           <Character paragraph={heading} />
