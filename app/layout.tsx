@@ -6,8 +6,9 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Freelance Project Manager | UAE",
-  description: "Freelance Project Manager & Industrial Compliance Auditor Based in UAE | Available for local & remote projects",
+  title: "Advanced Technology Solutions | IT Consulting & Project Management",
+  description: `We provide project management, engineering design, site auditing, specialized industrial solutions, 
+                packaging automation, and compliance excellence across the MENA Region.`,
 };
 
 export default function RootLayout({
