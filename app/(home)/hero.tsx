@@ -255,14 +255,14 @@ const Hero = () => {
                     TECH ASSURE
 				</h1>
 				<div className="animate-fade-in animate-delay-2">
-                    <p className="text-lg md:text-2xl lg:text-3xl text-white/90 font-light italic tracking-wide mb-6">
+                    <p className="text-lg md:text-xl lg:text-xl text-white/90 font-light italic tracking-wide mb-6">
                         Where innovation meets trust
                     </p>
                 </div>
             </div>
             
             <div className="animate-fade-in animate-delay-2">
-                <p className="text-xl md:text-2xl lg:text-3xl text-yellow-400 font-bold tracking-wide">
+                <p className="text-xl md:text-xl lg:text-xl text-yellow-400 font-bold tracking-wide">
                     CEO: MARIAM WARIS
                 </p>
             </div>
