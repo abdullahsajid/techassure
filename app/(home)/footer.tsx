@@ -35,8 +35,8 @@ const Footer = () => {
               </div>
               </div>
               <hr className="bg-white w-full" />
-            <p className="font-medium text-white text-[17px] max-[450px]:text-sm max-lg:mt-5">
-              @techassure. All right reserved
+            <p className="font-medium text-white text-[17px] max-[450px]:text-sm max-lg:mt-5 max-sm:text-center">
+              @techassure. All right reserved | Built by <a href="https://abdullahsajid.me" target="_blank" className="underline">Abdullah Sajid</a>
             </p>
           </div>
         </div>
